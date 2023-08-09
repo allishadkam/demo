@@ -7,8 +7,6 @@ import AuthContext from '../../Store/auth-contex';
 
 const emailReducer=(state,action)=>{
 
-  const authCtx = useContext(AuthContext)
-
 
   if(action.type==="USER_INPUT"){
     return {value:action.val, isValid:action.val.includes("@")}
@@ -27,6 +25,8 @@ const Login = (props) => {
   const [formIsValid, setFormIsValid] = useState(false);
 
   const [EmailState,DispatchEmail]=useReducer(emailReducer,{value:'', isValid:null})
+
+  const authCtx = useContext(AuthContext)
 
   useEffect(()=>{
     const identifier = setTimeout(()=>{

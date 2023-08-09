@@ -1,8 +1,8 @@
-import React from 'react';
+import React,{useContext} from 'react';
 
 import Navigation from './Navigation';
 import classes from './MainHeader.module.css';
-
+import AuthContext from '../../Store/auth-contex';
 const MainHeader = (props) => {
   const authCtx=useContext(AuthContext)
   return (
